@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Build your Health Profile </title>
+</head>
+
+<body>
+    <br><br>
+    <div class="container">
+        <div class="container">
+            <div class="row top-header">
+                <p>
+                    Build your <span class="top-header-bold">Health Profile</span>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-6 yellow-section">
+                    <div class="container">
+                        <p class="cursive-header">
+                            Welcome Back, Jane
+                        </p>
+                        <p>
+                            Your health profile indicates a snapshot of your lifestyle, fitness and personal health.
+                            We’ll provide you personalized tips and areas to improve based on your current health. Take
+                            this quiz every few weeks to track your progress.
+
+                        </p>
+                        <p>
+                            🕖 Get your results in 5 minutes.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-6 progress-box">
+                    <div class="container">
+                        <img src='img\progress-box.png' width=510>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row grey-section">
+                <div class="container">
+                    <p class="gender-age-subtitle">
+                        <span class="section-label"> About You </span> | 19 years old, female
+                    </p>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="container">
+                                <div class="container row">
+                                    <p class="yellow-headers">
+                                        Your Body Mass Index
+                                    </p>
+                                    <img class="info-icon" src='img\favicon (14).png' width=20 height=25
+                                        data-toggle="tooltip" data-placement="right" title="Body Mass Index may be an imprecise measurement of fitness as it does not take
+                                        body fat percentage into consideration.">
+
+                                </div>
+                                <div class="container row">
+                                    <p>
+                                        Height (cm):
+                                    </p>
+                                    <div class="slidecontainer">
+                                        <input type="range" min="100" max="200" value="160" class="slider"
+                                            id="height-range">
+                                    </div>
+                                    <form>
+                                        &nbsp;&nbsp;<input type="text" id="about_height" name="about_height" size="8"
+                                            value="160"> &nbsp;
+                                    </form>
+
+
+                                </div>
+                                <div class="container row">
+                                    <p>
+                                        Weight (kg):
+                                    </p>
+                                    <div class="slidecontainer">
+                                        <input type="range" min="30" max="200" value="60" class="slider"
+                                            id="weight-range">
+                                    </div>
+                                    <form>
+                                        &nbsp;&nbsp;<input type="text" id="about_weight" name="about_weight" value="60"
+                                            size="8"> &nbsp;
+                                    </form>
+
+                                </div>
+                                <div class="container row">
+                                    <div class="container row card">
+                                        <div class="card-body">
+                                            <output id="BMI-output" class="BMI-output" name="BMI-output">23.4</output>
+                                            &nbsp;<output id="BMI-range" class="BMI-range"
+                                                name="BMI-range">HEALTHY</output>
+                                        </div>
+                                    </div>
+                                    <div class="container col-5">
+                                        <p class="BMI-description"> Healthy BMI: </p>
+                                        <p class="BMI-description2">18.5-24.9</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="container">
+                                <p class="yellow-headers">
+                                    Managing Your Habits
+                                </p>
+                                <div class="container row">
+                                    <p>
+                                        How often do you drink
+                                        water?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <select id="drink-water" name="drink-water" class="dropdown">
+                                        <option value="Rarely">Rarely</option>
+                                        <option value="Infrequent">1 glass per day</option>
+                                        <option value="Sometimes">2-4 glasses per day</option>
+                                        <option value="Average">4-6 glasses per day</option>
+                                        <option value="Ideal" selected="selected">8 glasses per day (Ideal)</option>
+                                        <option value="Very Frequent">More than 8 glasses per day</option>
+
+                                    </select>
+                                </div>
+                                <div class="container row">
+                                    <p>
+                                        How often do you drink alcohol?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <select id="drink-alcohol" name="drink-alcohol" class="dropdown">
+                                        <option value="Never">Never</option>
+                                        <option value="Occasionally">Occasionally</option>
+                                        <option value="Weekly">1 drink per week</option>
+                                        <option value="Frequent">2-4 drinks per week</option>
+                                        <option value="Very Frequent">4-6 drinks per week</option>
+                                        <option value="Daily">1 drink per day</option>
+                                        <option value="Heavy">More than 1 drink per day</option>
+
+                                    </select>
+                                </div>
+                                <div class="container row">
+                                    <p>
+                                        How often do you smoke cigarettes?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <select id="smoke" name="smoke" class="dropdown">
+                                        <option value="Never">Never</option>
+                                        <option value="Former smoker">Former smoker</option>
+                                        <option value="Rarely">Rarely</option>
+                                        <option value="Often">1-5 cigarettes a day</option>
+                                        <option value="Frequent">5-10 cigarettes a day</option>
+                                        <option value="Heavy">More than 10 cigarettes a day</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4 grey-section">
+                            <p class="section-label">
+                                Exercise & Sleep
+                            </p>
+                            <p class="grey-italic-subtitle">
+                                For an average day:
+                            </p>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Describe Your Fitness:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <select id="fitness" name="fitness" class="dropdown"
+                                        onchange="calculate_expenditure();">
+                                        <option value="Inactive">Inactive</option>
+                                        <option value="Lightly Active">Lightly Active</option>
+                                        <option value="Average" selected="selected">Average</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Very Active">Very Active</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Intense Exercise:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="intense_exercise" name="intense_exercise" size="1"
+                                            value="1"> h per day
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Light/Moderate Exercise:&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="light_moderate_exercise" name="light_moderate_exercise"
+                                            size="1" value="2"> h per day
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Standing/Walking:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="standing_walking" name="standing_walking" size="1"
+                                            value="4"> h per day
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Sleeping:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="sleeping" name="sleeping" size="1" value="7"> h per day
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Sitting (Remaining Time):&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <output id="sitting" class="sitting" name="sitting"></output>&nbsp;h per day
+
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p class="average-headers">
+                                        Daily Energy Expenditure
+                                    </p>
+
+                                    <img class="info-icon2" src='img\favicon (14).png' width=20 height=20
+                                        data-toggle="tooltip" data-placement="right" title="Total Daily Energy Expenditure (TDEE) is a measure of how many calories your body burns daily based on physical activity, gender, age, height and weight.">
+                                </div>
+                                
+                                <canvas class="default-chart" id="doughnut-chart" width="800" height="450"></canvas>
+                                <p class="TDEE-output" id="calories"> 2250</p>
+                                <p class="kcal1">kcal</p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-4 grey-section">
+                            <p class="section-label">
+                                Diet
+                            </p>
+                            <p class="grey-italic-subtitle">
+                                For an average day:
+                            </p>
+
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Fruits/Vegetables:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="fruits_vegetables" name="fruits_vegetables" size="1"
+                                            value="3"> portions
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Wholegrains:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="wholegrains" name="wholegrains" size="1" value="2">
+                                        portions
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Meat/Alternatives:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="meat" name="meat" size="1" value="1"> portions
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Dairy/Alternatives:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="dairy" name="dairy" size="1" value="1"> portions
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Fastfoods:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="fastfood" name="fastfood" size="1" value="0"> portions
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="container row">
+                                    <p>
+                                        Sweet Beverages:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </p>
+                                    <form>
+                                        <input type="text" id="sweet_beverages" name="sweet_beverages" size="1"
+                                            value="0"> drinks
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <p class="average-headers">
+                                    Average Daily Intake
+                                </p>
+
+                                <div class="diet-display">
+                                    <div class="circle ">
+                                        <p class="diet-cal" id="daily_intake">2250</p>
+                                        <p class="kcal2">kcal</p>
+                                    </div>
+                                    <div class="two-buttons">
+                                        <button id="plus" type="button" class="btn plus-minus"
+                                            onclick="updateDietCal(10)">+</button>
+                                        <button id="minus" type="button" class="btn plus-minus"
+                                            onclick="updateDietCal(-10)">-</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 yellow-section">
+                            <p class="section-label top-header-bold">
+                                Calories
+                            </p>
+                            <p class="grey-italic-subtitle">
+                                Daily fitness, sleep and diet can play a large role on body weight.
+                            </p>
+                            <div class="container row">
+                                <div class="col-12">
+                                    <div class="container row">
+                                        <p class="big-blue2" id="daily_intake_2">2250</p>
+                                        <p class="cal-labels">Daily Intake</p>
+                                    </div>
+                                    <div class="container row">
+                                        <p class="big-blue2" id="calories_2"> 2250</p>
+                                        <p class="cal-labels">Daily Expenditure</p>
+                                    </div>
+                                    <div class="container col-12 deficitline"></div>
+                                    <div class="container col-12 deficitbox">
+                                        <div class="row ">
+                                            <p class="cal-diff-label">CALORIC DIFFERENCE</p>
+                                            <img src='img\favicon (14).png' width=20 height=20 data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title="300-600 kcal deficit is ideal for the average adult to lose weight. A high deficit can cause muscle loss and negative impacts on the body.">
+                                        </div>
+                                        <div class="row container">
+                                            <p class="big-blue2" id="deficit">0</p>
+                                            <p class="kcal">kcal</p>
+                                        </div>
+                                        <p class="grey-desc" id="weight_description">No Weight Change</p>
+                                    </div>
+
+                                    <div class="row container">
+                                        <p>Weekly Change (lbs):</p>&nbsp;
+                                        <p class="change-labels" id="weekly_change"></p>&nbsp;
+                                    </div>
+                                    <div class="row container">
+                                        <p>Monthly Change (lbs):</p>&nbsp;
+                                        <p class="change-labels" id="monthly_change"></p>&nbsp;
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="window.open('results.html','_self')">Calculate your results</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="./index.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        function updateDietCal(change) {
+            Number(change);
+            let cal = Number(document.getElementById("daily_intake").textContent);
+            let newCal = cal + change;
+            document.getElementById("daily_intake").innerText = newCal;
+            document.getElementById("daily_intake_2").innerText = newCal;
+            calculateStats();
+        }
+
+        function calculateStats() {
+            let intake = Number(document.getElementById("daily_intake").textContent);
+            let expenditure = Number(document.getElementById("calories").textContent);
+            let deficit = intake - expenditure;
+            document.getElementById("deficit").innerText = deficit;
+            let weekChange = Math.round(((deficit * 7) / 7400) * 100) / 100;
+            let monthChange = Math.round(((weekChange / 7) * (365.25 / 12)) * 100) / 100;
+            document.getElementById("weekly_change").innerText = weekChange;
+            document.getElementById("monthly_change").innerText = monthChange;
+            //window.alert(weekChange);
+            if (weekChange == 0) {
+                document.getElementById("weight_description").textContent = "No Weight Change";
+                document.getElementById("weight_description").classList.add("grey-desc");
+                document.getElementById("weight_description").classList.remove("red-desc");
+                document.getElementById("weight_description").classList.remove("green-desc");
+            } else if (weekChange > 0) {
+                document.getElementById("weight_description").textContent = "Weight Gain";
+                document.getElementById("weight_description").classList.add("red-desc");
+                document.getElementById("weight_description").classList.remove("grey-desc");
+                document.getElementById("weight_description").classList.remove("green-desc");
+            } else if (deficit > -600) { //weekChange < 0 && weekChange > -2.21 && 
+                document.getElementById("weight_description").textContent = "Moderate Weight Loss";
+                document.getElementById("weight_description").classList.add("green-desc");
+                document.getElementById("weight_description").classList.remove("grey-desc");
+                document.getElementById("weight_description").classList.remove("red-desc");
+            } else if (deficit < -600) { //weekChange < -2.21 && weekChange > -4.41 ||
+                document.getElementById("weight_description").textContent = "High Weight Loss";
+                document.getElementById("weight_description").classList.add("red-desc");
+                document.getElementById("weight_description").classList.remove("grey-desc");
+                document.getElementById("weight_description").classList.remove("green-desc");
+            } else if (weekChange < -4.41 && weekChange > -7.71) {
+                document.getElementById("weight_description").textContent = "Extreme Weight Loss";
+                document.getElementById("weight_description").classList.add("red-desc");
+                document.getElementById("weight_description").classList.remove("grey-desc");
+                document.getElementById("weight_description").classList.remove("green-desc");
+            }
+
+
+        }
+
+        function calculate_expenditure() {
+            //window.alert("test");
+            let age = 19;
+            let height = $('#about_height').val(); //cm
+            let weight = $('#about_weight').val(); //kg
+            let BMR = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+
+
+            let e = document.getElementById("fitness").value;
+            //window.alert(e);
+            let TDEE;
+            //if (e.options[e.selectedIndex].value == "Inactive"){
+            if (e == "Inactive") {
+                TDEE = Math.round(BMR * 1.2);
+                document.getElementById("calories").textContent = TDEE;
+                document.getElementById("calories_2").textContent = TDEE;
+                calculateStats();
+            }
+            //else if (e.options[e.selectedIndex].value == "Lightly Active"){
+            else if (e == "Lightly Active") {
+                TDEE = Math.round(BMR * 1.375);
+                document.getElementById("calories").textContent = TDEE;
+                document.getElementById("calories_2").textContent = TDEE;
+                calculateStats();
+            }
+            //else if (e.options[e.selectedIndex].value == "Average"){
+            else if (e == "Average") {
+                TDEE = Math.round(BMR * 1.55);
+                document.getElementById("calories").textContent = TDEE;
+                document.getElementById("calories_2").textContent = TDEE;
+                calculateStats();
+            }
+            //else if (e.options[e.selectedIndex].value == "Active"){
+            else if (e == "Active") {
+                TDEE = Math.round(BMR * 1.725);
+                document.getElementById("calories").textContent = TDEE;
+                document.getElementById("calories_2").textContent = TDEE;
+                calculateStats();
+            }
+            //else if (e.options[e.selectedIndex].value == "Very Active"){
+            else if (e == "Very Active") {
+                TDEE = Math.round(BMR * 1.9);
+                document.getElementById("calories").textContent = TDEE;
+                document.getElementById("calories_2").textContent = TDEE;
+                calculateStats();
+            }
+            //return TDEE.toString;
+        }
+
+        $('#intense_exercise, #light_moderate_exercise, #standing_walking, #sleeping').on("input", function () {
+            let sitting_time = calculate_sitting(intense_exercise, light_moderate_exercise, standing_walking,
+                sleeping);
+
+            $('#sitting').val(sitting_time);
+            //let donut = createChart();
+            //let chart = chart.update();
+            //document.getElementById('doughnut-chart').
+        }).trigger("change");
+
+        function calculate_sitting(intense_exercise, light_moderate_exercise, standing_walking, sleeping) {
+            let sitting_time = 24 - intense_exercise.value - light_moderate_exercise.value - standing_walking.value -
+                sleeping.value;
+            return sitting_time;
+        }
+
+
+        $(document).ready(function () {
+
+            let ie = document.getElementById("intense_exercise").value;
+            let lme = document.getElementById("light_moderate_exercise").value;
+            let sw = document.getElementById("standing_walking").value;
+            let s = document.getElementById("sleeping").value;
+
+            let sitting_time = 24 - ie - lme - sw - s;
+            document.getElementById("sitting").value = sitting_time;
+
+
+            /////Energy Expenditure Donut Chart
+            //function createChart(){
+            let a = $('#intense_exercise').val();
+            let b = $('#light_moderate_exercise').val();
+            let c = $('#standing_walking').val();
+            let d = $('#sleeping').val();
+            let e = $('#sitting').val();
+
+            // let a = intense_exercise.value;
+            // let b = light_moderate_exercise.value;
+            // let c = standing_walking.value;
+            // let d = sleeping.value;
+            // let e = sitting_time;
+
+
+            let ctx = document.getElementById('doughnut-chart').getContext('2d');
+            let chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'doughnut',
+
+                // The data for our dataset
+                data: {
+                    labels: ['Intense Exercise', 'Light/Moderate Exercise', 'Standing/Walking',
+                        'Sleeping',
+                        'Sitting'
+                    ],
+                    datasets: [{
+                        label: 'Contribution Amounts',
+                        backgroundColor: [
+                            'rgb(255, 192, 0)',
+                            'rgb(255, 242, 190)',
+                            'rgb(234, 171, 0)',
+                            'rgb(172, 199, 213)',
+                            'rgb(0, 76, 108)'
+                        ],
+                        borderColor: [
+                            'rgb(255, 192, 0)',
+                            'rgb(255, 242, 190)',
+                            'rgb(234, 171, 0)',
+                            'rgb(172, 199, 213)',
+                            'rgb(0, 76, 108)'
+                        ],
+
+                        data: [a, b, c, d, e]
+                        //data: [intense_exercise.value, light_moderate_exercise.value, standing_walking.value, sleeping.value, sitting_time.value]
+                        //data: [intense_exercise.val, light_moderate_exercise.val, standing_walking.val, sleeping.val, sitting_time.val]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    cutoutPercentage: 65,
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    legend: {
+                        display: false
+                    },
+                    elements: {
+                        center: {
+                            text: "",
+                            sidePadding: 15 //Default 20 (as a percentage)
+                        }
+                    }
+                }
+            });
+            Chart.pluginService.register({
+                beforeDraw: function (chart) {
+                    if (chart.config.options.elements.center) {
+                        //Get ctx from string
+                        var ctx = chart.chart.ctx;
+
+                        //Get options from the center object in options
+                        var centerConfig = chart.config.options.elements.center;
+                        var fontStyle = centerConfig.fontStyle || 'Arial';
+                        var txt = centerConfig.text;
+                        var color = centerConfig.color || '#000';
+                        var sidePadding = centerConfig.sidePadding || 20;
+                        var sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2)
+                        //Start with a base font of 30px
+                        ctx.font = "30px " + fontStyle;
+
+                        //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+                        var stringWidth = ctx.measureText(txt).width;
+                        var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+                        // Find out how much the font can grow in width.
+                        var widthRatio = elementWidth / stringWidth;
+                        var newFontSize = Math.floor(30 * widthRatio);
+                        var elementHeight = (chart.innerRadius * 2);
+
+                        // Pick a new font size so it will not be larger than the height of label.
+                        var fontSizeToUse = Math.min(newFontSize, elementHeight);
+
+                        //Set font settings to draw it correctly.
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+                        var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+                        ctx.font = fontSizeToUse + "px " + fontStyle;
+                        ctx.fillStyle = color;
+
+                        //Draw text in center
+                        ctx.fillText(txt, centerX, centerY);
+                    }
+
+                }
+            });
+
+        });
+
+
+
+
+
+
+        // // function updateChart(chart) {
+
+        // //     chart.update();
+        // // }
+
+        $('#intense_exercise, #light_moderate_exercise, #standing_walking, #sleeping, #sitting').on("input",
+            function () {
+                /////Energy Expenditure Donut Chart
+                //function createChart(){
+                let a = $('#intense_exercise').val();
+                let b = $('#light_moderate_exercise').val();
+                let c = $('#standing_walking').val();
+                let d = $('#sleeping').val();
+                let e = $('#sitting').val();
+
+                // let a = intense_exercise.value;
+                // let b = light_moderate_exercise.value;
+                // let c = standing_walking.value;
+                // let d = sleeping.value;
+                // let e = sitting_time;
+
+
+                let ctx = document.getElementById('doughnut-chart').getContext('2d');
+                let chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'doughnut',
+
+                    // The data for our dataset
+                    data: {
+                        labels: ['Intense Exercise', 'Light/Moderate Exercise', 'Standing/Walking',
+                            'Sleeping',
+                            'Sitting'
+                        ],
+                        datasets: [{
+                            label: 'Contribution Amounts',
+                            backgroundColor: [
+                                'rgb(255, 192, 0)',
+                                'rgb(255, 242, 204)',
+                                'rgb(255,217,102)',
+                                'rgb(172, 199, 213)',
+                                'rgb(0, 76, 108)'
+                            ],
+                            borderColor: [
+                                'rgb(255, 192, 0)',
+                                'rgb(255, 242, 204)',
+                                'rgb(255,217,102)',
+                                'rgb(172, 199, 213)',
+                                'rgb(0, 76, 108)'
+                            ],
+
+                            data: [a, b, c, d, e]
+                            //data: [intense_exercise.value, light_moderate_exercise.value, standing_walking.value, sleeping.value, sitting_time.value]
+                            //data: [intense_exercise.val, light_moderate_exercise.val, standing_walking.val, sleeping.val, sitting_time.val]
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {
+                        cutoutPercentage: 65,
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        legend: {
+                            display: false
+                        },
+                        elements: {
+                            center: {
+                                text: "",
+                                sidePadding: 15 //Default 20 (as a percentage)
+                            }
+                        }
+                    }
+                });
+                Chart.pluginService.register({
+                    beforeDraw: function (chart) {
+                        if (chart.config.options.elements.center) {
+                            //Get ctx from string
+                            var ctx = chart.chart.ctx;
+
+                            //Get options from the center object in options
+                            var centerConfig = chart.config.options.elements.center;
+                            var fontStyle = centerConfig.fontStyle || 'Arial';
+                            var txt = centerConfig.text;
+                            var color = centerConfig.color || '#000';
+                            var sidePadding = centerConfig.sidePadding || 20;
+                            var sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2)
+                            //Start with a base font of 30px
+                            ctx.font = "30px " + fontStyle;
+
+                            //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+                            var stringWidth = ctx.measureText(txt).width;
+                            var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+                            // Find out how much the font can grow in width.
+                            var widthRatio = elementWidth / stringWidth;
+                            var newFontSize = Math.floor(30 * widthRatio);
+                            var elementHeight = (chart.innerRadius * 2);
+
+                            // Pick a new font size so it will not be larger than the height of label.
+                            var fontSizeToUse = Math.min(newFontSize, elementHeight);
+
+                            //Set font settings to draw it correctly.
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+                            var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+                            ctx.font = fontSizeToUse + "px " + fontStyle;
+                            ctx.fillStyle = color;
+
+                            //Draw text in center
+                            ctx.fillText(txt, centerX, centerY);
+                        }
+
+                    }
+                });
+
+            }).trigger("change");
+    </script>
+</body>
+
+</html>
